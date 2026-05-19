@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <p class="subtitle">#30DaysOfJS · Jour 28</p>
+    <h1>🌤 Weather App</h1>
+
+    <div class="search-section">
+      <input type="text" id="cityInput" placeholder="Cherche une ville... (ex: Dakar)">
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <div class="quick-cities">
+      <button class="city-btn" data-city="Dakar">🇸🇳 Dakar</button>
+      <button class="city-btn" data-city="Abidjan">🇨🇮 Abidjan</button>
+      <button class="city-btn" data-city="Paris">🇫🇷 Paris</button>
+      <button class="city-btn" data-city="New York">🇺🇸 New York</button>
+    </div>
+
+    <div id="loadingBox" class="loading-box hidden">
+      <div class="spinner"></div>
+      <span>Chargement...</span>
+    </div>
+
+    <div id="errorBox" class="error-box hidden"></div>
+
+    <div id="weatherCard" class="weather-card hidden">
+      <div class="weather-header">
+        <div class="weather-location">
+          <div id="cityName" class="city-name"></div>
+          <div id="countryName" class="country-name"></div>
+        </div>
+        <div id="weatherIcon" class="weather-icon"></div>
+      </div>
+
+      <div class="weather-temp">
+        <div id="temperature" class="temperature"></div>
+        <div id="feelsLike" class="feels-like"></div>
+        <div id="description" class="description"></div>
+      </div>
+
+      <div class="weather-grid">
+        <div class="weather-item">
+          <span class="weather-item-icon">💧</span>
+          <span class="weather-item-label">Humidité</span>
+          <span id="humidity" class="weather-item-value"></span>
+        </div>
+        <div class="weather-item">
+          <span class="weather-item-icon">💨</span>
+          <span class="weather-item-label">Vent</span>
+          <span id="wind" class="weather-item-value"></span>
+        </div>
+        <div class="weather-item">
+          <span class="weather-item-icon">👁</span>
+          <span class="weather-item-label">Visibilité</span>
+          <span id="visibility" class="weather-item-value"></span>
+        </div>
+        <div class="weather-item">
+          <span class="weather-item-icon">🌡</span>
+          <span class="weather-item-label">Pression</span>
+          <span id="pressure" class="weather-item-value"></span>
+        </div>
+      </div>
+
+      <div class="weather-footer">
+        <span id="lastUpdate" class="last-update"></span>
+        <button id="saveBtn" class="save-btn">💾 Sauvegarder</button>
+      </div>
+    </div>
+
+    <div id="savedSection" class="saved-section">
+      <div class="saved-label">Villes sauvegardées <span id="savedCount">(0)</span></div>
+      <div id="savedList" class="saved-list">
+        <p class="saved-empty">Aucune ville sauvegardée...</p>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
